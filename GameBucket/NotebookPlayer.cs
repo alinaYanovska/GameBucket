@@ -9,7 +9,7 @@ namespace GameBucket
     public class NotebookPlayer:BasePlayer
     {
         //public List<int>? Numbers { get; set; }
-        public override int RandomNewNumber(int sizeBucket)
+        public override int RandomNewNumber(int sizeBucket, List<int> numbersPlayers)
         {
             Random x = new Random();
             int n = x.Next(0, 10);

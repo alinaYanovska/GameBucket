@@ -9,14 +9,13 @@ namespace GameBucket
 {
     internal class SimplePlayer: BasePlayer
     {
-        //public string Name { get; set; }
-        //public List<int>? Numbers { get; set; } 
-        public override int RandomNewNumber(int sizeBucket)
+        public override int RandomNewNumber(int sizeBucket, List<int> numbersPlayers)
         {
             Random x = new Random(); 
             int n = x.Next(0,10);
             //Numbers = new List<int>(n);
             Numbers.Add(n);
+            //numbersPlayers.Add(n);
             Console.WriteLine(n);
             return n;
 

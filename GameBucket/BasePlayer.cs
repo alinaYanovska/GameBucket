@@ -11,8 +11,6 @@ namespace GameBucket
         public string Name { get; set; }
         public BasePlayer TypeOfPlayer { get; set; }
         public List<int>? Numbers { get; set; }
-        public List<int>? AllNumbers { get; set; }
-
-        public abstract int RandomNewNumber(int sizeBucket);
+        public abstract int RandomNewNumber(int sizeBucket, List<int> numbersPlayers);
     }
 }

@@ -9,9 +9,9 @@ namespace GameBucket
     internal class UberPlayer
     {
         public List<int>? Numbers { get; set; }
-        public bool RandomNewNumber(int sizeBucket, out int n)
+        public bool RandomNewNumber(int sizeBucket, List<int> numbersPlayers)
         {
-            n = 0;
+            int n = 0;
             if (Numbers.Count != 0)
             {
                 n = Numbers[Numbers.Count - 1];

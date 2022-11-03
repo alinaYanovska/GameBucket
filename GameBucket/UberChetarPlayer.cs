@@ -9,9 +9,9 @@ namespace GameBucket
     internal class UberChetarPlayer
     {
         public List<int>? Numbers { get; set; }
-        public bool RandomNewNumber(int sizeBucket, List<int> allNumber, out int n)
+        public bool RandomNewNumber(int sizeBucket, List<int> numbersPlayers)
         {
-            n = 0;
+            int n = 0;
             if (Numbers.Count != 0)
             {
                 n = Numbers[Numbers.Count - 1];
@@ -22,9 +22,9 @@ namespace GameBucket
                 n = 1;
             }
             
-            for (int i = 0; i < allNumber.Count; i++)
+            for (int i = 0; i < numbersPlayers.Count; i++)
             {
-                if (n == allNumber[i])
+                if (n == numbersPlayers[i])
                 {
                     n++;
                     i = 0;

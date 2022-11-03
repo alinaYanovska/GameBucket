@@ -2,46 +2,46 @@
 using GameBucket;
 using System.Xml.Linq;
 
-Console.WriteLine("Количество играков ");
-Random x = new Random();
-int countPlayerRND = 2;// x.Next(2, 8);
-BasePlayer[] countPlayer = new BasePlayer[countPlayerRND];
+//Console.WriteLine("Количество играков ");
+//Random x = new Random();
+//int countPlayerRND = 2;// x.Next(2, 8);
+//BasePlayer[] countPlayer = new BasePlayer[countPlayerRND];
+ 
 
+//for(int i = 0; i < countPlayerRND; i++)
+//{
+//    Console.WriteLine("Выберите тип игрока \n 1. Simple\n 2. Notebook\n  3. Chetar\n  4.Uber\n  5.UberChetar");
+//    double type= Convert.ToDouble(Console.ReadLine());
+//    switch (type)
+//    {
+//        case 1:
+//            countPlayer[i] = new SimplePlayer();
+//            countPlayer[i].Numbers = new List<int>();
+//            break;
+//        case 2:
+//            countPlayer[i] = new NotebookPlayer();
+//            countPlayer[i].Numbers = new List<int>();
+//            break;
+//        case 3:
+//            countPlayer[i] = new SimplePlayer();
+//            countPlayer[i].Numbers = new List<int>();
+//            break;
+//        case 4:
+//            countPlayer[i] = new SimplePlayer();
+//            countPlayer[i].Numbers = new List<int>();
+//            break;
+//        case 5:
+//            countPlayer[i] = new SimplePlayer();
+//            countPlayer[i].Numbers = new List<int>();
+//            break;
+//    }
+//    Console.WriteLine("Введите имя игрока");
+//    countPlayer[i].Name = Console.ReadLine();
+//}
+Game newGame= new Game();
+newGame.CreatePlayer();
 
-for(int i = 0; i < countPlayerRND; i++)
-{
-    Console.WriteLine("Выберите тип игрока \n 1. Simple\n 2. Notebook\n  3. Chetar\n  4.Uber\n  5.UberChetar");
-    double type= Convert.ToDouble(Console.ReadLine());
-    switch (type)
-    {
-        case 1:
-            countPlayer[i] = new SimplePlayer();
-            countPlayer[i].Numbers = new List<int>();
-            break;
-        case 2:
-            countPlayer[i] = new NotebookPlayer();
-            countPlayer[i].Numbers = new List<int>();
-            break;
-        case 3:
-            countPlayer[i] = new SimplePlayer();
-            countPlayer[i].Numbers = new List<int>();
-            break;
-        case 4:
-            countPlayer[i] = new SimplePlayer();
-            countPlayer[i].Numbers = new List<int>();
-            break;
-        case 5:
-            countPlayer[i] = new SimplePlayer();
-            countPlayer[i].Numbers = new List<int>();
-            break;
-    }
-    Console.WriteLine("Введите имя игрока");
-    countPlayer[i].Name = Console.ReadLine();
-}
-
-
-
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Размер корзины");
 int bucket = 5;
 Console.WriteLine(bucket);
 int number;
@@ -51,10 +51,10 @@ bool isWinner = false;
 
 while (!isWinner)
 {
-    for (int i = 0; i < countPlayer.Length; i++)
+    for (int i = 0; i < newGame.AllPlayer.Length; i++)
     {
-        Console.Write(countPlayer[i].Name);
-        int k = countPlayer[i].RandomNewNumber(bucket);
+        Console.Write(newGame.AllPlayer[i].Name);
+        int k = newGame.AllPlayer[i].RandomNewNumber(bucket);
         allNumber.Add(k);
         if (k == bucket)
         {
@@ -66,7 +66,7 @@ while (!isWinner)
 }
 Console.WriteLine("You Win");
 Console.WriteLine("rrrrrrr");
-foreach (int i in countPlayer[0].Numbers)
+foreach (int i in newGame.AllPlayer[0].Numbers)
 {
     
     Console.Write(i);
