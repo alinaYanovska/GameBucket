@@ -6,28 +6,25 @@ using System.Threading.Tasks;
 
 namespace GameBucket
 {
-    internal class NotebookPlayer
+    public class NotebookPlayer:BasePlayer
     {
-        public List<int> Numbers { get; set; }
-        public bool RandomNewNumber(int sizeBucket)
+        //public List<int>? Numbers { get; set; }
+        public override int RandomNewNumber(int sizeBucket)
         {
             Random x = new Random();
-            int n = x.Next(0, 100);
+            int n = x.Next(0, 10);
             
             for (int i = 0; i < Numbers.Count; i++)
             {
                 if (n == Numbers[i])
                 {
-                    n = x.Next(0, 100);
+                    n = x.Next(0, 10);
                     i = 0;
                 }
             }
             Numbers.Add(n);
-            if (n == sizeBucket)
-            {
-                return true;
-            }
-            return false;
+            Console.WriteLine(n);
+            return n;
 
         }
     }
