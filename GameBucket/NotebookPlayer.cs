@@ -8,17 +8,16 @@ namespace GameBucket
 {
     public class NotebookPlayer:BasePlayer
     {
-        //public List<int>? Numbers { get; set; }
         public override int RandomNewNumber(int sizeBucket, List<int> numbersPlayers)
         {
             Random x = new Random();
-            int n = x.Next(0, 10);
+            int n = x.Next(40, 140);
             
             for (int i = 0; i < Numbers.Count; i++)
             {
                 if (n == Numbers[i])
                 {
-                    n = x.Next(0, 10);
+                    n = x.Next(40, 140);
                     i = 0;
                 }
             }

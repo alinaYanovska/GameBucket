@@ -12,7 +12,7 @@ namespace GameBucket
         public override int RandomNewNumber(int sizeBucket, List<int> numbersPlayers)
         {
             Random x = new Random(); 
-            int n = x.Next(0,10);
+            int n = x.Next(40, 140);
             //Numbers = new List<int>(n);
             Numbers.Add(n);
             //numbersPlayers.Add(n);

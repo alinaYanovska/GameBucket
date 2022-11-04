@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace GameBucket
 {
-    internal class UberPlayer
+    internal class UberPlayer: BasePlayer
     {
-        public List<int>? Numbers { get; set; }
-        public bool RandomNewNumber(int sizeBucket, List<int> numbersPlayers)
+        public override int RandomNewNumber(int sizeBucket, List<int> numbersPlayers)
         {
             int n = 0;
             if (Numbers.Count != 0)
@@ -21,15 +20,11 @@ namespace GameBucket
             }
             else 
             {
-                n = 1;
+                n = 40;
                 Numbers.Add(n);
                 Console.WriteLine(n);
             }
-            if (n == sizeBucket)
-            {
-                return true;
-            }
-            return false;
+            return n;
 
         }
     }
